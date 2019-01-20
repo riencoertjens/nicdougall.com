@@ -1,0 +1,3 @@
+[submodule "src/components/webhart-components"]
+	path = src/components/webhart-components
+	url = https://github.com/riencoertjens/webhart-components.git

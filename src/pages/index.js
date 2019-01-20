@@ -1,7 +1,12 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import { Section, Container, Columns, Column } from '../components/webhart'
+import {
+  Section,
+  Container,
+  Columns,
+  Column,
+} from '../components/webhart-components'
 import css from '@emotion/css'
 
 const IndexPage = () => (

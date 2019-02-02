@@ -8,11 +8,27 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `icons`,
+        path: `${__dirname}/src/images/icons`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content`,
+        name: 'markdown-content',
+      },
+    },
+
     // transform
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
 
     // build
@@ -37,25 +53,50 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ['/404', '/bericht-verzonden', '/admin'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `${config.siteMetadata.siteUrl}`,
         sitemap: `${config.siteMetadata.siteUrl}/sitemap.xml`,
+        policy: [
+          {
+            userAgent: '*',
+            disallow: ['/404', '/bericht-verzonden', '/admin'],
+          },
+        ],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: config.manifest,
     },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      // options: {
+      //   include: `./src/images/icons`,
+      // },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-netlify', //keep last
       options: {
         headers: {
           '/sw.js': ['Cache-Control: no-cache'], //dont cache the service worker!
         },
+        // mergeSecurityHeaders: false,
       },
     },
   ],

@@ -1,13 +1,13 @@
 ---
 templateKey: post
-# image: /images/2008-07-20-ook-uit-blauwe-lucht-komt-regen.jpg
+image: /images/2008-07-20-ook-uit-blauwe-lucht-komt-regen.jpg
 title: The transition
 date: 2008-07-20T00:00:00.000Z
 draft: false
 featured: true
 category: updates
 tags:
-  - interview
+  - interviews
   - about-nic
 ---
 

@@ -34,7 +34,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        {console.log(data)}
         <Global styles={globalStyle} />
         <SEO />
         <header
@@ -47,6 +46,7 @@ const Layout = ({ children }) => (
             display: flex;
             align-items: center;
             justify-content: space-between;
+            border-bottom: 3px solid ${colors.yellow};
             & > * {
               flex: 1;
             }
@@ -57,6 +57,7 @@ const Layout = ({ children }) => (
               height: ${pxToRem(50)};
               width: ${pxToRem(50)};
               display: block;
+              padding: 0.3rem;
               img {
                 margin-right: auto;
                 height: 100%;
@@ -64,7 +65,7 @@ const Layout = ({ children }) => (
             `}
             to="/"
           >
-            <img src={LogoSVG} alt="logo" />
+            <img src={LogoNegSVG} alt="logo" />
           </GatsbyLink>
           <nav
             css={css`

@@ -9,9 +9,9 @@ import LogoSVG from '../images/logo.svg'
 import { colors, ButtonGatsbyLink } from '../site/styles'
 import SEO from '../components/webhart-components/SEO'
 
-const BlogPage = ({ data }) => (
+const AboutPage = ({ data }) => (
   <Layout>
-    <SEO title="feed the furnace - blog" />
+    <SEO title="the man behind the smile - about" />
     <Hero color={colors.blue}>
       <GatsbyImage
         fluid={data.headerImage.childImageSharp.fluid}
@@ -65,10 +65,10 @@ const BlogPage = ({ data }) => (
   </Layout>
 )
 
-export default BlogPage
+export default AboutPage
 
-export const BlogPageQuery = graphql`
-  query BlogPageQuery {
+export const AboutPageQuery = graphql`
+  query AboutPageQuery {
     site {
       siteMetadata {
         siteTitle
@@ -76,11 +76,46 @@ export const BlogPageQuery = graphql`
         siteDescription
       }
     }
-    # posts: allMarkdownRemark
-    headerImage: file(base: { eq: "nic-beach.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1800) {
-          ...GatsbyImageSharpFluid
+    instagramUser: allPostsJson(limit: 1) {
+      edges {
+        node {
+          userName
+          userFullName
+          userBio
+          userFollowers
+          userPostCount
+          id
+          code
+          likes
+          comment
+          text
+          type
+          image {
+            childImageSharp {
+              fluid(maxWidth: 230, quality: 75) {
+                originalName
+              }
+            }
+          }
+        }
+      }
+    }
+    instagramPosts: allPostsJson(limit: 13) {
+      edges {
+        node {
+          id
+          code
+          likes
+          comment
+          type
+          text
+          image {
+            childImageSharp {
+              fluid(maxWidth: 80, quality: 75) {
+                originalName
+              }
+            }
+          }
         }
       }
     }

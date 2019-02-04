@@ -26,9 +26,24 @@ module.exports = {
         name: 'markdown-content',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data/images`,
+        name: 'instagram-images',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
+        name: 'instagram-data',
+      },
+    },
 
     // transform
     `gatsby-transformer-remark`,
+    'gatsby-transformer-json',
     `gatsby-transformer-sharp`,
 
     // build

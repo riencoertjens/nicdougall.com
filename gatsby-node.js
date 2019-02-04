@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+const instagramScrape = require('./utils/instascrape.js')
+exports.onPreBootstrap = () => {
+  instagramScrape('ndougall')
+}

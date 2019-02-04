@@ -6,7 +6,7 @@ import { Hero, Section, Container } from '../components/webhart-components'
 import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
 import LogoSVG from '../images/logo.svg'
-import { colors, Button, ButtonLink, ButtonGatsbyLink } from '../site/styles'
+import { colors, ButtonGatsbyLink } from '../site/styles'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -71,7 +71,7 @@ const IndexPage = ({ data }) => (
           mates I’ve ever met, but I’m excited to chase personal success in the
           sport of triathlon.
         </p>
-        <ButtonGatsbyLink alt to="/about">
+        <ButtonGatsbyLink border to="/about">
           read more
         </ButtonGatsbyLink>
       </Container>
@@ -83,7 +83,7 @@ const IndexPage = ({ data }) => (
             color: ${colors.blue};
           `}
         >
-          news
+          blog
         </h2>
         <p>
           I’m really excited to announce that I’ll be returning to triathlon, a
@@ -103,7 +103,7 @@ const IndexPage = ({ data }) => (
             color: ${colors.blue};
           `}
         >
-          more news
+          calendar
         </h2>
         <p>
           I’m really excited to announce that I’ll be returning to triathlon, a

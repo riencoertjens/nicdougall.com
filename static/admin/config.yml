@@ -1,10 +1,10 @@
 backend:
-  # name: test-repo
-  name: git-gateway
-  branch: master
+  name: test-repo
+  # name: git-gateway
+  # branch: master
 
-media_folder: static/assets
-public_folder: assets
+media_folder: static/netlify-uploads
+public_folder: netlify-uploads
 
 collections:
   - name: 'pages'
@@ -37,3 +37,41 @@ collections:
             ],
           },
         ]
+  - name: 'posts'
+    label: 'Blog'
+    folder: 'src/content/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'post',
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
+      - {
+          label: 'Featured',
+          name: 'featured',
+          widget: 'boolean',
+          default: false,
+        }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options: [
+            'events',
+            'fuel',
+            'gear',
+            'sponsors',
+            'thoughts',
+            'training',
+            'updates'
+          ],
+        }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

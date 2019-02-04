@@ -118,7 +118,8 @@ class Layout extends Component {
                     `}
                   left: 0;
                   width: 100vw;
-                  height: 100vh;
+                  height: calc(100vh - ${pxToRem(66)});
+
                   background: ${colors.blue};
                   font-size: 1.5rem;
                   ${mediaQueryGT['mobile']} {

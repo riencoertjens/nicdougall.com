@@ -2,7 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Hero, Section, Container } from '../components/webhart-components'
+import {
+  Hero,
+  Section,
+  Container,
+  ScrollArrow,
+} from '../components/webhart-components'
 import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
 import LogoSVG from '../images/logo.svg'
@@ -36,6 +41,12 @@ const AboutPage = ({ data }) => (
         {/* <img src={LogoSVG} height={75} alt="logo" /> */}
         <h1>About</h1>
         <p>the man behind the smile</p>
+        <ScrollArrow
+          // label="contact"
+          style={css`
+            margin-top: auto;
+          `}
+        />
       </div>
     </Hero>
     <Section background={colors.yellow}>

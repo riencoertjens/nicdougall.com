@@ -17,16 +17,10 @@ const NotFoundPage = () => (
           margin-top: auto;
         `}
       >
-        oeps! deze pagina bestaat niet
+        oops! this page does not exist
       </h1>
       <h2>404</h2>
-      <GatsbyLink to="/">ga terug naar start</GatsbyLink>
-      <ScrollArrow
-        label="contact"
-        style={css`
-          margin-top: auto;
-        `}
-      />
+      <GatsbyLink to="/">back to start</GatsbyLink>
     </Hero>
   </Layout>
 )

@@ -7,7 +7,8 @@ draft: false
 featured: true
 category: partners
 tags:
-  - sponsors
+  - gear
+  - training
 ---
 
 # My thoughts on riding Rotor

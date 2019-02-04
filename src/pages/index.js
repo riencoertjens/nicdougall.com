@@ -2,11 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Hero, Section, Container } from '../components/webhart-components'
+import {
+  Hero,
+  Section,
+  Container,
+  ScrollArrow,
+} from '../components/webhart-components'
 import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
 import LogoSVG from '../images/logo.svg'
 import { colors, ButtonGatsbyLink } from '../site/styles'
+import PostList from '../components/PostList'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -52,6 +58,12 @@ const IndexPage = ({ data }) => (
         <img src={LogoSVG} height={75} alt="logo" />
         <h1>Nicolas Dougall</h1>
         <p>{data.site.siteMetadata.siteTagline}</p>
+        <ScrollArrow
+          // label="contact"
+          style={css`
+            margin-top: auto;
+          `}
+        />
       </div>
     </Hero>
     <Section background={colors.blue}>
@@ -89,15 +101,9 @@ const IndexPage = ({ data }) => (
         >
           blog
         </h2>
-        <p>
-          I’m really excited to announce that I’ll be returning to triathlon, a
-          sport I’ve always been passionate about, for 2019 and hopefully
-          beyond. Cycling has given me a lot and I’ll always be thankful for my
-          time in the peloton, racing with some of the greatest athletes and
-          mates I’ve ever met, but I’m excited to chase personal success in the
-          sport of triathlon.
-        </p>
-        <ButtonGatsbyLink to="/blog">read blog</ButtonGatsbyLink>
+        <PostList posts={data.posts} />
+
+        <ButtonGatsbyLink to="/blog">all posts</ButtonGatsbyLink>
       </Container>
     </Section>
     <Section background={colors.yellow} color="black">
@@ -137,6 +143,23 @@ export const IndexPageQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    posts: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "post" }
+          featured: { eq: true }
+          draft: { eq: false }
+        }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 3
+    ) {
+      edges {
+        node {
+          ...PostListFragment
         }
       }
     }

@@ -1,6 +1,6 @@
 ---
 templateKey: post
-image: /images/2008-07-20-ook-uit-blauwe-lucht-komt-regen.jpg
+image: /netlify-uploads/2019-01-01-the-transition.jpg
 title: The transition
 date: 2008-07-20T00:00:00.000Z
 draft: false

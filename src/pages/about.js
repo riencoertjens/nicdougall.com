@@ -23,6 +23,7 @@ const AboutPage = ({ data }) => (
           height: '100%',
           zIndex: -1,
         }}
+        // imgStyle={{ objectPosition: '50% 25%' }}
       />
       <div
         css={css`
@@ -33,8 +34,8 @@ const AboutPage = ({ data }) => (
         `}
       >
         {/* <img src={LogoSVG} height={75} alt="logo" /> */}
-        <h1>Blog</h1>
-        <p>Feed the furnace</p>
+        <h1>About</h1>
+        <p>the man behind the smile</p>
       </div>
     </Hero>
     <Section background={colors.yellow}>
@@ -78,7 +79,7 @@ export const AboutPageQuery = graphql`
         siteDescription
       }
     }
-    headerImage: file(base: { eq: "nic-dora.jpg" }) {
+    headerImage: file(base: { eq: "nic-smile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid

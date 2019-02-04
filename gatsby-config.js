@@ -5,13 +5,13 @@ module.exports = {
   siteMetadata: config.siteMetadata,
   plugins: [
     // source
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `icons`,
-        path: `${__dirname}/src/images/icons`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `icons`,
+    //     path: `${__dirname}/src/images/icons`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

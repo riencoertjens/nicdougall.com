@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => (
         <p>{data.site.siteMetadata.siteTagline}</p>
       </div>
     </Hero>
-    <Section background={colors.blue} color="white">
+    <Section background={colors.blue}>
       <Container>
         <h2
           css={css`
@@ -63,7 +63,11 @@ const IndexPage = ({ data }) => (
         >
           the transition
         </h2>
-        <p>
+        <p
+          css={css`
+            color: white;
+          `}
+        >
           I’m really excited to announce that I’ll be returning to triathlon, a
           sport I’ve always been passionate about, for 2019 and hopefully
           beyond. Cycling has given me a lot and I’ll always be thankful for my

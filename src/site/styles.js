@@ -1,46 +1,80 @@
 import css from '@emotion/css'
-import normalize from '../components/webhart/normalize'
+import styled from '@emotion/styled'
 
-import 'typeface-poppins'
 import 'typeface-raleway'
+import 'typeface-montserrat'
 
-const baseFontSize = '16'
-const lineHeight = '1.5'
-const spacing = '1.5'
+import { mediaQueries, baseFontSize } from '../components/webhart-components'
+import GatsbyLink from 'gatsby-link'
+
+export const typographySettings = {
+  baseFontSize: '16px',
+  baseLineHeight: 1.666,
+  scaleRatio: 2.5,
+  headerFontFamily: ['Raleway', 'sans-serif'],
+  bodyFontFamily: ['Montserrat', 'serif'],
+}
+
+export const colors = {
+  blue: '#0B2952',
+  yellow: '#F0AB25',
+}
+
+export const fonts = {
+  body: `'Montserrat', sans-serif`,
+  title: `'Raleway', sans-serif`,
+}
 
 export const globalStyle = css`
-  ${normalize}
+  ${'' /* ${normalize} */}
+
   html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    ${mediaQueries({
+      fontSize: baseFontSize,
+    })}
     box-sizing: border-box;
-    font-size: ${(baseFontSize / 16) * 100}%; // 100% = 16px
-    line-height: ${lineHeight}em;
-    font-family: 'Raleway', sans-serif;
+    ${'' /* line-height: ${lineHeight}rem;
+    font-family: ${fonts.body}; */}
+    ${'' /* color: ${colors.grijs}; */}
   }
   *,
   *:before,
   *:after {
     box-sizing: inherit;
-    ${'' /* border: 1px solid black; */}
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Poppins';
-  }
-
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: ${lineHeight};
-    margin-top: 0;
-    margin-bottom: ${spacing}rem;
   }
 `
+
+export const Button = styled.button`
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 2px solid;
+  border-color: ${colors.blue};
+  background: ${colors.blue};
+  color: ${colors.yellow};
+  &:hover {
+    color: ${colors.blue};
+    background: ${colors.yellow};
+    border-color: ${colors.yellow};
+  }
+  ${props => props.border && `border-color: ${colors.yellow}`}
+  ${props =>
+    props.alt &&
+    `background: ${colors.yellow};
+    color: ${colors.blue};
+    border-color: ${colors.yellow};
+  &:hover {
+    border-color: ${colors.blue};
+    color: ${colors.yellow};
+    background: ${colors.blue};
+  }`}
+`
+
+export const ButtonLink = Button.withComponent('a')
+export const ButtonGatsbyLink = Button.withComponent(GatsbyLink)

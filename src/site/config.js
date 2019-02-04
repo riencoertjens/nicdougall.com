@@ -1,21 +1,21 @@
 const base = {
-  owner: 'WEB-hart',
-  name: `long site name`,
-  shortName: `shortname`,
-  tagline: `fancy catchphrase about the brand`,
-  twitter: '@rien_coertjens',
-  instagram: '@rien_coertjens',
-  facebookAppID: '',
-  facebookPage: '',
-  url: `https://site.netlify.com`, // no trailing slash!
-  // url: `https://www.site.com`,
-  titleTemplateSeperator: ' | ',
-  icon: 'src/images/site-icon.png', // This path is relative to the root of the site.
-  image: `src/images/social-image.png`, // This path is relative to the root of the site.
+  owner: `Nicolas Dougall`,
+  name: `Nicolas Dougall`,
+  shortName: `ndougall`,
+  tagline: `plant-powered triathlete`,
+  twitter: `nic_dougall`,
+  instagram: `ndougall`,
+  facebookAppID: ``,
+  facebookPage: `155775668303609`,
+  url: `https://nicdougall.netlify.com`, // no trailing slash!
+  // url: `https://www.nicdougall.com`,
+  titleTemplateSeperator: ` | `,
+  icon: `src/images/site-icon.png`, // 1500x1500 This path is relative to the root of the site.
+  image: `images/social-image.png`, // 1200x630 This path is relative to the root of the site.
   language: `en`,
-  description: `Cillum do duis sit incididunt minim aute laboris qui duis tempor id culpa est veniam. Anim consectetur ea mollit ex consectetur est adipisicing eiusmod. Commodo et mollit nostrud consectetur.`,
-  primaryColor: '#000',
-  primaryBgColor: '#fff',
+  description: `Completing the 10 year challenge in style! U19 olympic distance world champion of 2009, plant powered triathlete, Nic Dougall returns to his triathlon roots after working on his cycling leg in world's highest level bike racing league`,
+  primaryColor: `#F0AB25`,
+  primaryBgColor: `#0B2952`,
 }
 
 const config = {
@@ -24,13 +24,15 @@ const config = {
     owner: base.owner,
     siteTitle: base.tagline,
     siteDescription: base.description,
+    siteTagline: base.tagline,
     siteImage: base.image,
     siteIcon: base.icon,
     siteUrl: base.url,
     titleTemplate: `%s${base.titleTemplateSeperator}${base.name}`,
     twitterUsername: base.twitter,
-    facebookAppID: base.facebookAppID,
+    instagramUsername: base.instagram,
     facebookPage: base.facebookPage,
+    facebookAppID: base.facebookAppID,
     siteLanguage: base.language,
     organization: {
       name: base.owner,
@@ -41,10 +43,10 @@ const config = {
   manifest: {
     name: base.name,
     short_name: base.shortName,
-    start_url: '/',
+    start_url: `/`,
     background_color: base.primaryBgColor,
     theme_color: base.primaryColor,
-    display: 'minimal-ui',
+    display: `minimal-ui`,
     icon: base.icon, // This path is relative to the root of the site.
   },
 }

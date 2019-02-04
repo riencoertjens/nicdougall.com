@@ -40,6 +40,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/site/typography`,
+        omitGoogleFont: true,
+      },
+    },
 
     // optimize
     {

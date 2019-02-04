@@ -6,15 +6,12 @@ import {
   Hero,
   Section,
   Container,
-  pxToRem,
   ScrollArrow,
 } from '../components/webhart-components'
 import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
-import LogoSVG from '../images/logo.svg'
-import { colors, ButtonGatsbyLink } from '../site/styles'
+import { colors } from '../site/styles'
 import SEO from '../components/webhart-components/SEO'
-import GatsbyLink from 'gatsby-link'
 import PostList from '../components/PostList'
 
 const BlogPage = ({ data }) => (

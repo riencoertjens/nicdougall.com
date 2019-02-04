@@ -10,8 +10,7 @@ import {
 } from '../components/webhart-components'
 import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
-import LogoSVG from '../images/logo.svg'
-import { colors, ButtonGatsbyLink } from '../site/styles'
+import { colors } from '../site/styles'
 import SEO from '../components/webhart-components/SEO'
 
 const AboutPage = ({ data }) => (

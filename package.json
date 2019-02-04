@@ -38,6 +38,7 @@
     "netlify-cms": "^2.3.3",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
+    "react-burgers": "^1.2.0",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.3.0",

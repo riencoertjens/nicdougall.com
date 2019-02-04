@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/webhart-components/SEO'
-import { Hero, ScrollArrow } from '../components/webhart-components'
+import { Hero } from '../components/webhart-components'
 import { colors } from '../site/styles'
 import css from '@emotion/css'
 import GatsbyLink from 'gatsby-link'

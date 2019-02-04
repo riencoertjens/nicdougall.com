@@ -26,8 +26,10 @@ const AboutPage = ({ data }) => (
       />
       <div
         css={css`
-          /* margin-bottom: 50vh;
-          padding-top: 3rem; */
+          /*
+          margin-bottom: 50vh;
+          padding-top: 3rem;
+          */
         `}
       >
         {/* <img src={LogoSVG} height={75} alt="logo" /> */}
@@ -76,48 +78,56 @@ export const AboutPageQuery = graphql`
         siteDescription
       }
     }
-    instagramUser: allPostsJson(limit: 1) {
-      edges {
-        node {
-          userName
-          userFullName
-          userBio
-          userFollowers
-          userPostCount
-          id
-          code
-          likes
-          comment
-          text
-          type
-          image {
-            childImageSharp {
-              fluid(maxWidth: 230, quality: 75) {
-                originalName
-              }
-            }
-          }
-        }
-      }
-    }
-    instagramPosts: allPostsJson(limit: 13) {
-      edges {
-        node {
-          id
-          code
-          likes
-          comment
-          type
-          text
-          image {
-            childImageSharp {
-              fluid(maxWidth: 80, quality: 75) {
-                originalName
-              }
-            }
-          }
+    headerImage: file(base: { eq: "nic-dora.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
   }
 `
+
+// instagramUser: allPostsJson(limit: 1) {
+//   edges {
+//     node {
+//       userName
+//       userFullName
+//       userBio
+//       userFollowers
+//       userPostCount
+//       id
+//       code
+//       likes
+//       comment
+//       text
+//       type
+//       image {
+//         childImageSharp {
+//           fluid(maxWidth: 230, quality: 75) {
+//             originalName
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// instagramPosts: allPostsJson(limit: 13) {
+//   edges {
+//     node {
+//       id
+//       code
+//       likes
+//       comment
+//       type
+//       text
+//       image {
+//         childImageSharp {
+//           fluid(maxWidth: 80, quality: 75) {
+//             originalName
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

@@ -66,8 +66,7 @@ collections:
           options: [
             'events',
             'fuel',
-            'gear',
-            'sponsors',
+            'partners',
             'thoughts',
             'training',
             'updates'

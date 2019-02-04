@@ -5,13 +5,13 @@ module.exports = {
   siteMetadata: config.siteMetadata,
   plugins: [
     // source
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `icons`,
-    //     path: `${__dirname}/src/images/icons`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `icons`,
+        path: `${__dirname}/static/netlify-uploads`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -42,7 +42,24 @@ module.exports = {
     },
 
     // transform
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1800,
+            },
+          },
+          `gatsby-remark-embed-video`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-responsive-iframe`,
+        ],
+      },
+    },
     'gatsby-transformer-json',
     `gatsby-transformer-sharp`,
 

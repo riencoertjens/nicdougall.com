@@ -81,8 +81,8 @@ const Layout = ({ children }) => (
           >
             <GatsbyLink to="/">home</GatsbyLink>
             <GatsbyLink to="/about">about</GatsbyLink>
-            <GatsbyLink to="/blog">blog</GatsbyLink>
             <GatsbyLink to="/partners">partners</GatsbyLink>
+            <GatsbyLink to="/blog">blog</GatsbyLink>
             <GatsbyLink to="/calendar">calendar</GatsbyLink>
           </nav>
           <div

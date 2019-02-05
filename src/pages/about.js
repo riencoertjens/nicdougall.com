@@ -165,7 +165,7 @@ export const AboutPageQuery = graphql`
         frontmatter: {
           templateKey: { eq: "post" }
           draft: { eq: false }
-          pages: { in: "about" }
+          pages: { eq: "about" }
         }
       }
       sort: { order: DESC, fields: frontmatter___date }

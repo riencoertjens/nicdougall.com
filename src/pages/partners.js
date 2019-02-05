@@ -264,7 +264,7 @@ export const PartnersPageQuery = graphql`
         frontmatter: {
           templateKey: { eq: "post" }
           draft: { eq: false }
-          pages: { in: "partners" }
+          pages: { eq: "partners" }
         }
       }
       sort: { order: DESC, fields: frontmatter___date }

@@ -5,7 +5,8 @@ title: My thoughts on riding Rotor
 date: 2008-07-20T00:00:00.000Z
 draft: false
 featured: true
-pages: partners
+pages:
+  - partners
 tags:
   - gear
   - training

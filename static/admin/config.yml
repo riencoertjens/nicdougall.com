@@ -70,5 +70,5 @@ collections:
             'calendar',
           ],
         }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: false }
+      - { label: 'Tags (comma seperated)', name: 'tags', widget: 'list', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }

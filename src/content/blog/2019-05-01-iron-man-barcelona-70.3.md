@@ -5,7 +5,8 @@ title: 70.3 Iron Man Barcelona race report
 date: 2008-05-01T00:00:00.000Z
 draft: false
 featured: false
-pages: calendar
+pages:
+  - calendar
 tags:
   - race-report
 ---

@@ -148,7 +148,7 @@ export const CalendarPageQuery = graphql`
         frontmatter: {
           templateKey: { eq: "post" }
           draft: { eq: false }
-          pages: { in: "calendar" }
+          pages: { eq: "calendar" }
         }
       }
       sort: { order: DESC, fields: frontmatter___date }

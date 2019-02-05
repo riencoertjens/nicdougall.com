@@ -5,7 +5,8 @@ title: Nic Dougall announces return to triathlon
 date: 2019-01-31T00:00:00.000Z
 draft: false
 featured: true
-pages: about
+pages:
+  - about
 tags:
   - new-start
 ---

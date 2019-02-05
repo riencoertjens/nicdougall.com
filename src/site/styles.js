@@ -47,10 +47,19 @@ export const globalStyle = css`
   *:after {
     box-sizing: inherit;
   }
+
+  blockquote {
+    font-style: italic;
+    span {
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
 `
 
 export const Button = styled.button`
   padding: 0.5rem 1rem;
+  cursor: pointer;
   font-weight: 600;
   text-decoration: none;
   transition: 0.2s;
@@ -58,22 +67,28 @@ export const Button = styled.button`
   border-color: ${colors.blue};
   background: ${colors.blue};
   color: ${colors.yellow};
+  display: inline-block;
+  width: auto;
+  height: auto;
   &:hover {
     color: ${colors.blue};
     background: ${colors.yellow};
     border-color: ${colors.yellow};
   }
-  ${props => props.border && `border-color: ${colors.yellow}`}
+  ${props => props.border && `border-color: ${colors.yellow};`}
+
   ${props =>
     props.alt &&
-    `background: ${colors.yellow};
-    color: ${colors.blue};
-    border-color: ${colors.yellow};
-  &:hover {
-    border-color: ${colors.blue};
-    color: ${colors.yellow};
-    background: ${colors.blue};
-  }`}
+    `
+      background: ${colors.yellow};
+      color: ${colors.blue};
+      border-color: ${props.border ? colors.blue : colors.yellow};
+      &:hover {
+        border-color: ${colors.blue};
+        color: ${colors.yellow};
+        background: ${colors.blue};
+      }
+    `}
 `
 
 export const ButtonLink = Button.withComponent('a')

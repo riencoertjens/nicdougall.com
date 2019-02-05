@@ -5,7 +5,7 @@ title: Nic Dougall announces return to triathlon
 date: 2019-01-31T00:00:00.000Z
 draft: false
 featured: true
-category: updates
+pages: about
 tags:
   - new-start
 ---
@@ -22,7 +22,7 @@ The announcement follows Dougall’s hint at a career change following his final
 
 **Pro athlete’s career comes full circle**
 
-At 16-years-old, Dougall showcased his potential on the international stage having won the 2009 16-19 age group Sprint ITU World Championships in Australia, where he also posted the fastest time of the day across all age categories. After securing the Sprint ITU World Championships, Dougall switched from triathlon to cycling and secured his first professional contract in 2014. Dougall raced for pro-continental team, MTN-Qhubeka, for two seasons before cycling’s governing body promoted the team to World Tour status as Dimension Data for Qhubeka in 2016.
+At 16-years-old, Dougall showcased his potential on the international stage having won the 2009 16-19 age group Sprint ITU World Championships in Australia, where he also posted the fastest time of the day across all age pages. After securing the Sprint ITU World Championships, Dougall switched from triathlon to cycling and secured his first professional contract in 2014. Dougall raced for pro-continental team, MTN-Qhubeka, for two seasons before cycling’s governing body promoted the team to World Tour status as Dimension Data for Qhubeka in 2016.
 
 Over five seasons, Dougall recorded a Top-20 finish at the 2016 UCI Road World Championships in Doha, Qatar, and was an instrumental support rider for the Spring Classics races, and three-week long grand tour race, the Vuelta a España.
 

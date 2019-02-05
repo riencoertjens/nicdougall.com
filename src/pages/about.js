@@ -12,10 +12,15 @@ import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
 import { colors } from '../site/styles'
 import SEO from '../components/webhart-components/SEO'
+import PostList from '../components/PostList'
 
 const AboutPage = ({ data }) => (
   <Layout>
-    <SEO title="the man behind the smile - about" />
+    <SEO
+      pathname="/about"
+      title="the man behind the smile - about"
+      image={data.headerImage.childImageSharp.SEO.src}
+    />
     <Hero color={colors.blue}>
       <GatsbyImage
         fluid={data.headerImage.childImageSharp.fluid}
@@ -27,21 +32,12 @@ const AboutPage = ({ data }) => (
           height: '100%',
           zIndex: -1,
         }}
-        // imgStyle={{ objectPosition: '50% 25%' }}
       />
-      <div
-        css={css`
-          /*
-          margin-bottom: 50vh;
-          padding-top: 3rem;
-          */
-        `}
-      >
-        {/* <img src={LogoSVG} height={75} alt="logo" /> */}
+      <div>
         <h1>About</h1>
         <p>the man behind the smile</p>
         <ScrollArrow
-          // label="contact"
+          headerSize={60}
           style={css`
             margin-top: auto;
           `}
@@ -55,26 +51,86 @@ const AboutPage = ({ data }) => (
             color: ${colors.blue};
           `}
         >
-          latest posts
+          Bio
         </h2>
         <p>
-          Excepteur et veniam deserunt tempor. Non cillum quis do nisi ullamco
-          eiusmod anim Lorem consectetur tempor minim exercitation minim. Labore
-          mollit culpa aute ullamco minim voluptate. Anim cillum commodo nulla
-          elit qui pariatur cillum est elit reprehenderit cupidatat exercitation
-          nisi aute. Ex ipsum labore in adipisicing ut dolor excepteur dolore
-          veniam ullamco.
+          <strong>
+            <i>Early Years</i> - U19 Sprint Distance World Champion 2009
+          </strong>
+          <br />
+          I've always had a passion for sport and as a kid I played almost
+          everything from Waterpolo to Aussie Rules football, but endurance
+          sport was where I started to focus my attention as a teenager. After
+          swimming and running competitively for a few years my attention was
+          captured by Triathlon in high school. During that time I made 3 state
+          teams and won the 16-19 Age Group Sprint Distance World Championships
+          in 2009.
+          <blockquote>
+            Nic is amazing! <span>- national coach at the time?</span>
+          </blockquote>
         </p>
+
         <p>
-          Velit pariatur est ex officia voluptate sunt Lorem elit aliqua labore
-          cillum commodo culpa officia. Sint excepteur dolore commodo commodo
-          dolor Lorem voluptate. Eu tempor laboris magna minim aliquip velit id
-          velit consectetur. Eiusmod do adipisicing proident occaecat ut. Amet
-          dolor cupidatat voluptate labore laborum excepteur dolor anim aliquip
-          sit et. Incididunt consectetur amet ad nisi est.
+          <strong>
+            <i>The World Tour - 2014-2018</i> - Top 20 elite World Championship
+            2016
+          </strong>
+          <br />
+          After 2009 I made the decision to focus on cycling with the goal of
+          making it to the highest level of the sport. In 2014 I turned
+          professional with MTN Qhubeka, which later became Team Dimension Data
+          after it was granted World Tour status in 2016. I was fortunate enough
+          to ride some of the biggest races in the world with this team
+          including 2 Vuelta Espanas and the big Spring Classics like De Ronde
+          van Vlaanderen. I also placed Top 20 at Road Worlds in 2016.
+          <blockquote>
+            Nic is amazing! <span>- Mark Cavendish?</span>
+          </blockquote>
         </p>
+
+        <p>
+          <strong>
+            <i>The Return to the roots</i>
+          </strong>
+          <br />
+          In 2019 I'm excited to be returning to my passion for Triathlon. I've
+          missed the variety and the challenge that only the combination of
+          three sports can provide. I'll always be thankful for my time in the
+          peloton but at the same time I'm extremely excited to be chasing my
+          own personal success as a triathlete.
+          <blockquote>
+            Nic is amazing! <span>- some big shot in triathlon?</span>
+          </blockquote>
+        </p>
+
+        <p>
+          <strong>
+            <i>Family</i>
+          </strong>
+          <br />I met Brooke Sarah in -year-, blablabla we got married in -year-
+          blablabla. (write something nice!)
+          <blockquote>
+            Brooke is my queen Dora my princess! <span>- Nic</span>
+          </blockquote>
+        </p>
+        <GatsbyImage
+          fixed={data.family.childImageSharp.fixed}
+          style={{
+            borderRadius: '100%',
+            margin: '2rem auto 0',
+            display: 'block',
+          }}
+        />
       </Container>
     </Section>
+    {data.posts && data.posts.edges.length > 0 && (
+      <Section background="whitesmoke">
+        <Container>
+          <h2>Related posts</h2>
+          <PostList posts={data.posts} />
+        </Container>
+      </Section>
+    )}
   </Layout>
 )
 
@@ -93,6 +149,31 @@ export const AboutPageQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid
+        }
+      }
+      ...SEOImageFragment
+    }
+    family: file(base: { eq: "dougall-family.jpg" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    posts: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "post" }
+          draft: { eq: false }
+          pages: { in: "about" }
+        }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 3
+    ) {
+      edges {
+        node {
+          ...PostListFragment
         }
       }
     }

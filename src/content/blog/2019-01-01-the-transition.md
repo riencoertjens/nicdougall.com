@@ -5,7 +5,7 @@ title: The transition
 date: 2008-07-20T00:00:00.000Z
 draft: false
 featured: true
-category: updates
+pages: about
 tags:
   - interviews
   - about-nic

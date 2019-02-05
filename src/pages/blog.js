@@ -16,7 +16,11 @@ import PostList from '../components/PostList'
 
 const BlogPage = ({ data }) => (
   <Layout>
-    <SEO title="feed the furnace - blog" />
+    <SEO
+      pathname="/blog"
+      title="feed the furnace - blog"
+      image={data.headerImage.childImageSharp.SEO.src}
+    />
     <Hero color={colors.blue}>
       <GatsbyImage
         fluid={data.headerImage.childImageSharp.fluid}
@@ -39,7 +43,7 @@ const BlogPage = ({ data }) => (
         <h1>Blog</h1>
         <p>Feed the furnace</p>
         <ScrollArrow
-          // label="contact"
+          headerSize={60}
           style={css`
             margin-top: auto;
           `}
@@ -55,7 +59,7 @@ const BlogPage = ({ data }) => (
         >
           latest posts
         </h2>
-        <PostList posts={data.posts} />
+        <PostList blogPage posts={data.posts} />
       </Container>
     </Section>
   </Layout>
@@ -91,6 +95,7 @@ export const BlogPageQuery = graphql`
           ...GatsbyImageSharpFluid
         }
       }
+      ...SEOImageFragment
     }
   }
 `

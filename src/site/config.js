@@ -5,6 +5,8 @@ const base = {
   tagline: `plant-powered triathlete`,
   twitter: `nic_dougall`,
   instagram: `ndougall`,
+  email: `ndougall92@gmail.com`,
+  phone: `+1(650) 454-6751`,
   facebookAppID: ``,
   facebookPage: `155775668303609`,
   url: `https://nicdougall.netlify.com`, // no trailing slash!
@@ -22,6 +24,8 @@ const config = {
   base: base,
   siteMetadata: {
     owner: base.owner,
+    email: base.email,
+    phone: base.phone,
     siteTitle: base.tagline,
     siteDescription: base.description,
     siteTagline: base.tagline,

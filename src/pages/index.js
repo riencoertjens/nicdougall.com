@@ -13,6 +13,7 @@ import css from '@emotion/css'
 import LogoSVG from '../images/logo.svg'
 import { colors, ButtonGatsbyLink } from '../site/styles'
 import PostList from '../components/PostList'
+import GatsbyLink from 'gatsby-link'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -42,9 +43,9 @@ const IndexPage = ({ data }) => (
             margin: 0.5rem;
           }
           padding-top: 5rem;
-          background: rgba(255, 255, 255, 0.5);
-          width: 100%;
           position: relative;
+          width: 100%;
+          background: rgba(255, 255, 255, 0.5);
           :after {
             content: ' ';
             display: block;
@@ -59,7 +60,7 @@ const IndexPage = ({ data }) => (
         <h1>Nicolas Dougall</h1>
         <p>{data.site.siteMetadata.siteTagline}</p>
         <ScrollArrow
-          // label="contact"
+          headerSize={60}
           style={css`
             margin-top: auto;
           `}
@@ -93,7 +94,11 @@ const IndexPage = ({ data }) => (
       </Container>
     </Section>
     <Section color="black" background="whitesmoke">
-      <Container>
+      <Container
+        css={css`
+          position: relative;
+        `}
+      >
         <h2
           css={css`
             color: ${colors.blue};
@@ -102,26 +107,46 @@ const IndexPage = ({ data }) => (
           blog
         </h2>
         <PostList posts={data.posts} />
-
-        <ButtonGatsbyLink to="/blog">all posts</ButtonGatsbyLink>
       </Container>
     </Section>
-    <Section background={colors.yellow} color="black">
+    <Section background={colors.yellow}>
       <Container>
         <h2
           css={css`
             color: ${colors.blue};
           `}
         >
-          calendar
+          Partners
         </h2>
-        <p>
-          I’m really excited to announce that I’ll be returning to triathlon, a
-          sport I’ve always been passionate about, for 2019 and hopefully
-          beyond. Cycling has given me a lot and I’ll always be thankful for my
-          time in the peloton, racing with some of the greatest athletes and
-          mates I’ve ever met, but I’m excited to chase personal success in the
-          sport of triathlon.
+        <p
+          css={css`
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 0 -1rem;
+            flex-wrap: wrap;
+            a {
+              margin: 1rem;
+              flex: 0 0 300px;
+              text-align: center;
+              color: ${colors.yellow};
+              filter: grayscale(1) brightness(50%);
+              &:hover {
+                filter: saturate(1);
+              }
+            }
+          `}
+        >
+          <GatsbyLink to="/partners#ventum">
+            <GatsbyImage fluid={data.ventum.childImageSharp.fluid} />
+          </GatsbyLink>
+          <GatsbyLink to="/partners#hokaoneone">
+            <GatsbyImage fluid={data.hokaoneone.childImageSharp.fluid} />
+          </GatsbyLink>
+          <GatsbyLink to="/partners#incrediwear">
+            <GatsbyImage fluid={data.incrediwear.childImageSharp.fluid} />
+          </GatsbyLink>
         </p>
       </Container>
     </Section>
@@ -145,6 +170,7 @@ export const IndexPageQuery = graphql`
           ...GatsbyImageSharpFluid
         }
       }
+      ...SEOImageFragment
     }
     posts: allMarkdownRemark(
       filter: {
@@ -160,6 +186,27 @@ export const IndexPageQuery = graphql`
       edges {
         node {
           ...PostListFragment
+        }
+      }
+    }
+    ventum: file(base: { eq: "sponsor-ventum.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    hokaoneone: file(base: { eq: "sponsor-hokaoneone.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    incrediwear: file(base: { eq: "sponsor-incrediwear.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

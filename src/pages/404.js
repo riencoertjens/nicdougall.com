@@ -9,7 +9,8 @@ import GatsbyLink from 'gatsby-link'
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Pagina niet gevonden" />
+    <SEO title="404: Page not found" pathname="/404" />
+
     <Hero background={colors.overlay}>
       <h1
         css={css`

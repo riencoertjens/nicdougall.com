@@ -82,6 +82,7 @@ class Layout extends Component {
                   padding={'15px 10px 10px'}
                   active={menuActive}
                   onClick={() => this.setState({ menuActive: !menuActive })}
+                  aria-label="menu toggle"
                 />
               </div>
               <GatsbyLink
@@ -119,7 +120,6 @@ class Layout extends Component {
                   left: 0;
                   width: 100vw;
                   height: calc(100vh - ${pxToRem(66)});
-
                   background: ${colors.blue};
                   font-size: 1.5rem;
                   ${mediaQueryGT['mobile']} {
@@ -186,7 +186,9 @@ class Layout extends Component {
                   }
                 `}
               >
+                {/* social links */}
                 <OutboundLink
+                  aria-label="instagram"
                   target="_blank"
                   href={`https://instagram.com/${
                     data.site.siteMetadata.instagram
@@ -195,12 +197,14 @@ class Layout extends Component {
                   <InstagramIcon />
                 </OutboundLink>
                 <OutboundLink
+                  aria-label="twitter"
                   target="_blank"
                   href={`https://twitter.com/${data.site.siteMetadata.twitter}`}
                 >
                   <TwitterIcon />
                 </OutboundLink>
                 <OutboundLink
+                  aria-label="facebook"
                   target="_blank"
                   href={`https://facebook.com/${
                     data.site.siteMetadata.facebook

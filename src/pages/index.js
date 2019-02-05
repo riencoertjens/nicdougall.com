@@ -148,6 +148,18 @@ const IndexPage = ({ data }) => (
             <GatsbyImage fluid={data.incrediwear.childImageSharp.fluid} />
           </GatsbyLink>
         </p>
+        <>
+          <ButtonGatsbyLink
+            border
+            alt
+            to="/partners"
+            css={css`
+              margin: 0 auto;
+            `}
+          >
+            more info
+          </ButtonGatsbyLink>
+        </>
       </Container>
     </Section>
   </Layout>

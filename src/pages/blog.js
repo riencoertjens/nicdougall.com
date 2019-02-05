@@ -51,7 +51,7 @@ const BlogPage = ({ data }) => (
       </div>
     </Hero>
     <Section background="whitesmoke">
-      <Container width="wide">
+      <Container>
         <h2
           css={css`
             color: ${colors.blue};

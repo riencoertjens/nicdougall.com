@@ -1,16 +1,9 @@
 import css from '@emotion/css'
 import styled from '@emotion/styled'
 
-// BreakPoints,
-// siteGlobalStyle,
-// useTypography,
-// responsiveFontSizes,
-// fontFamilies,
-
 import 'typeface-raleway'
 import 'typeface-montserrat'
 
-// import { mediaQueries } from '../components/webhart-components'
 import GatsbyLink from 'gatsby-link'
 
 export const lineHeight = '1.5'

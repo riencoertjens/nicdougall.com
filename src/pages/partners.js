@@ -94,7 +94,7 @@ const PartnersPage = ({ data }) => (
     </SplitPaneSection>
     <SplitPaneSection
       image={data.incrediwearImage}
-      name="incrediwear"
+      name="hokaoneone"
       background={colors.yellow}
     >
       <h2
@@ -124,7 +124,7 @@ const PartnersPage = ({ data }) => (
     </SplitPaneSection>
     <SplitPaneSection
       image={data.hokaoneoneImage}
-      name="ventum"
+      name="incrediwear"
       background={colors.blue}
       reverse
     >
@@ -149,7 +149,7 @@ const PartnersPage = ({ data }) => (
     </SplitPaneSection>
     <SplitPaneSection
       image={data.wantedImage}
-      name="ventum"
+      name="wanted"
       background={colors.yellow}
     >
       <h2

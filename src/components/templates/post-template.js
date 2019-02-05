@@ -71,7 +71,14 @@ const PostPage = ({ data, pageContext: { slug } }) => {
         <Container width="narrow">
           <span>{post.frontmatter.date}</span>
           <Tags tags={post.frontmatter.tags} alt />
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            css={css`
+              a {
+                color: ${colors.blue};
+              }
+            `}
+          />
         </Container>
       </Section>
     </Layout>

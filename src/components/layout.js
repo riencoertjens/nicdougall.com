@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import { Global, css } from '@emotion/core'
-import { globalStyle, colors, Button } from './../site/styles'
+import { colors, Button } from './../site/styles'
 import SEO from './webhart-components/SEO'
 import GatsbyLink from 'gatsby-link'
 
@@ -24,6 +24,7 @@ import {
   Container,
   Columns,
   Column,
+  globalStyle,
 } from './webhart-components'
 
 import { EventsList } from '../pages/calendar'

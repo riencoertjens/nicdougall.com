@@ -1,19 +1,28 @@
 import css from '@emotion/css'
 import styled from '@emotion/styled'
 
+// BreakPoints,
+// siteGlobalStyle,
+// useTypography,
+// responsiveFontSizes,
+// fontFamilies,
+
 import 'typeface-raleway'
 import 'typeface-montserrat'
 
-import { mediaQueries, baseFontSize } from '../components/webhart-components'
+// import { mediaQueries } from '../components/webhart-components'
 import GatsbyLink from 'gatsby-link'
 
-export const typographySettings = {
-  baseFontSize: '16px',
-  baseLineHeight: 1.666,
-  scaleRatio: 2.5,
-  headerFontFamily: ['Raleway', 'sans-serif'],
-  bodyFontFamily: ['Montserrat', 'serif'],
-}
+export const lineHeight = '1.5'
+export const spacing = 1.5
+
+export const DefaultPaddingX = '1rem'
+export const DefaultPaddingY = 0
+
+export const BreakPoints = ['600px', '900px', '1200px', '1600px']
+
+export const baseFontSize = 16
+export const responsiveFontSizes = ['14px', '16px', '16px', '16px', '18px']
 
 export const colors = {
   blue: '#0B2952',
@@ -21,33 +30,24 @@ export const colors = {
 }
 
 export const fonts = {
-  body: `'Montserrat', sans-serif`,
-  title: `'Raleway', sans-serif`,
+  body: ['Montserrat', 'sans-serif'],
+  title: ['Raleway', 'sans-serif'],
+}
+export const fontFamilies = {
+  title: fonts.title.join(', '),
+  body: fonts.body.join(', '),
 }
 
-export const globalStyle = css`
-  ${'' /* ${normalize} */}
+export const useTypography = true
+export const typographySettings = {
+  baseFontSize: baseFontSize[2],
+  baseLineHeight: lineHeight,
+  scaleRatio: 2.5,
+  headerFontFamily: fonts.title,
+  bodyFontFamily: fonts.body,
+}
 
-  html {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-
-    ${mediaQueries({
-      fontSize: baseFontSize,
-    })}
-    box-sizing: border-box;
-    ${'' /* line-height: ${lineHeight}rem;
-    font-family: ${fonts.body}; */}
-    ${'' /* color: ${colors.grijs}; */}
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
+export const siteGlobalStyle = css`
   blockquote {
     font-style: italic;
     span {

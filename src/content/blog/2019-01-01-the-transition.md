@@ -7,7 +7,6 @@ draft: false
 featured: true
 pages:
   - about
-  - partners
 tags:
   - interviews
   - about-nic

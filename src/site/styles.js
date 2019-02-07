@@ -5,6 +5,7 @@ import 'typeface-raleway'
 import 'typeface-montserrat'
 
 import GatsbyLink from 'gatsby-link'
+import { getFonts } from '../components/webhart-components/functions'
 
 export const lineHeight = '1.5'
 export const spacing = 1.5
@@ -22,25 +23,23 @@ export const colors = {
   yellow: '#F0AB25',
 }
 
-export const fonts = {
+export const fontFamilies = {
   body: ['Montserrat', 'sans-serif'],
   title: ['Raleway', 'sans-serif'],
 }
-export const fontFamilies = {
-  title: fonts.title.join(', '),
-  body: fonts.body.join(', '),
-}
+
+export const fonts = getFonts(fontFamilies)
 
 export const useTypography = true
 export const typographySettings = {
   baseFontSize: baseFontSize[2],
   baseLineHeight: lineHeight,
   scaleRatio: 2.5,
-  headerFontFamily: fonts.title,
-  bodyFontFamily: fonts.body,
+  headerFontFamily: fontFamilies.title,
+  bodyFontFamily: fontFamilies.body,
 }
 
-export const siteGlobalStyle = css`
+export const globalStyle = css`
   blockquote {
     font-style: italic;
     span {

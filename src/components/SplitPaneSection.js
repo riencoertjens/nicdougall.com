@@ -26,6 +26,9 @@ const SplitPaneSection = ({
       css={css`
         padding: 0;
         position: relative;
+        blockquote span {
+          color: ${colors.yellow};
+        }
         ${reverse
           ? `
           color: white;
@@ -36,7 +39,8 @@ const SplitPaneSection = ({
         `
           : `
           a,
-          h2 {
+          h2,
+          blockquote span{
             color: ${colors.blue};
           }`}
       `}

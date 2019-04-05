@@ -73,17 +73,17 @@ const PartnersPage = ({ data }) => (
       <h2>Ventum</h2>
       <h3>Radical Design. Radical Results.</h3>
       <blockquote>
-        “Coming from racing bikes at the world's highest level means Nic knows a
-        good bike when he rides one. We are really pleased he choose to ride the
-        Ventum One”
-        <span> - Ventum</span>
-      </blockquote>
-
-      <blockquote>
-        “Ventum makes a pure-bread triathlon bike. By not following convention
-        or UCI-rules, they radically raise the bar! Both in terms of speed and
-        comfort”
+        “This. Bike. Is. Fast. But my favorite thing about it so far has been
+        how comfortable it is on the road. It soaks up all the road vibration
+        while still remaining stiff when you’re putting the power down. I think
+        I’m in love!”
         <span> - Nic</span>
+      </blockquote>
+      <blockquote>
+        “After racing as a World Tour cyclist for the last 4 years, Nic knows a
+        good bike when he rides one. We are really excited to be working with
+        someone as experienced on the bike as Nic this year.”
+        <span> - Ventum</span>
       </blockquote>
       <p>
         visit{' '}
@@ -106,14 +106,14 @@ const PartnersPage = ({ data }) => (
       </h2>
       <h3>the running shoe reinvented</h3>
       <blockquote>
-        a quote from Nic: “Ut elit nostrud Lorem occaecat ex laboris consectetur
-        tempor occaecat occaecat excepteur anim veniam.”
+        ”I’m really excited to be part of the Hoka family this year. They’re
+        really everything I’ve been looking for in a shoe, plenty of cushioning,
+        just the right amount of support and light on the feet.”
         <span> - Nic</span>
       </blockquote>
       <blockquote>
-        a quote from Hoka one one: “Ut elit nostrud Lorem occaecat ex laboris
-        consectetur tempor occaecat occaecat excepteur anim veniam.”
-        <span> - Hoka One One</span>
+        ”Hoka Quote”
+        <span> - Hoke One One</span>
       </blockquote>
       <p>
         visit{' '}
@@ -131,14 +131,18 @@ const PartnersPage = ({ data }) => (
       <h2>Incrediwear</h2>
       <h3>live incredibly</h3>
       <blockquote>
-        a quote from Nic: “Ut elit nostrud Lorem occaecat ex laboris consectetur
-        tempor occaecat occaecat excepteur anim veniam.”
+        ”I’ve used Incrediwear products for the last 4 years and I’ve had
+        nothing but amazing results with them. There is a tonne of science and
+        testing behind their products and it really shows in the quality of the
+        results I’ve had using them. My favorite product is the recovery leg
+        sleeves!”
         <span> - Nic</span>
       </blockquote>
       <blockquote>
-        a quote from Hoka one one: “Ut elit nostrud Lorem occaecat ex laboris
-        consectetur tempor occaecat occaecat excepteur anim veniam.”
-        <span> - Hoka One One</span>
+        ”After providing Nic with product for the last four years as a
+        professional cyclist we are really excited to continue to support him
+        following his return to triathlon.”
+        <span> - Incrediwear</span>
       </blockquote>
       <p>
         visit{' '}

@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => (
             color: ${colors.yellow};
           `}
         >
-          the transition
+          The Transition
         </h2>
         <p
           css={css`

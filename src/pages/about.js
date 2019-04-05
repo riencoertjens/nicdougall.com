@@ -107,11 +107,14 @@ const AboutPage = ({ data }) => (
           <strong>
             <i>Family</i>
           </strong>
-          <br />I met Brooke Sarah in -year-, blablabla we got married in -year-
-          blablabla. (write something nice!)
-          <blockquote>
-            Brooke is my queen Dora my princess! <span>- Nic</span>
-          </blockquote>
+          <br />I met my amazing wife Brooke in Brisbane, Australia when I was
+          19 years old and since then we’ve traveled the world together. She is
+          the most thoughtful and caring person I have ever met. Professional
+          sport involves huge sacrifices and I certainly wouldn’t have been able
+          to spend the last 7 years chasing my dreams if it wasn’t for her. We
+          also have a Cavalier King Charles Spaniel named Dora who loves to lick
+          all the salt off my legs when I come home from a ride or run and
+          cuddle on the couch with us when its raining.
         </p>
         <GatsbyImage
           fixed={data.family.childImageSharp.fixed}

@@ -36,7 +36,7 @@ class ImageSlider extends Component {
             onClick={() =>
               this.setState({
                 activeImage:
-                  activeImage == 0 ? images.length - 1 : activeImage - 1,
+                  activeImage === 0 ? images.length - 1 : activeImage - 1,
               })
             }
           >
@@ -49,7 +49,7 @@ class ImageSlider extends Component {
             css={css`
               transition: 0.5s;
               position: absolute;
-              opacity: ${this.state.activeImage == i ? '1' : '0'};
+              opacity: ${this.state.activeImage === i ? '1' : '0'};
             `}
             fluid={fluid}
             style={{
@@ -65,7 +65,7 @@ class ImageSlider extends Component {
             onClick={() =>
               this.setState({
                 activeImage:
-                  activeImage == images.length - 1 ? 0 : activeImage + 1,
+                  activeImage === images.length - 1 ? 0 : activeImage + 1,
               })
             }
           >
@@ -98,7 +98,7 @@ class ImageSlider extends Component {
                   cursor: pointer;
                   outline: 0;
                   transition: 0.3s;
-                  ${activeImage == i &&
+                  ${activeImage === i &&
                     `
                       background: ${colors.blue};
                     `};

@@ -25,7 +25,9 @@ export const Tags = ({ tags, alt }) => (
     `}
   >
     {tags.map((tag, i) => (
-      <GatsbyLink to={`/tag/${tag}`}>{tag}</GatsbyLink>
+      <GatsbyLink to={`/tag/${tag}`} key={i}>
+        {tag}
+      </GatsbyLink>
     ))}
   </div>
 )

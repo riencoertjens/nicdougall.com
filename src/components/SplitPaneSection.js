@@ -1,8 +1,6 @@
 import React from 'react'
 import css from '@emotion/css'
 
-import GatsbyImage from 'gatsby-image'
-
 import {
   Section,
   Container,
@@ -11,10 +9,11 @@ import {
   mediaQueryGT,
 } from './webhart-components'
 import { colors } from '../site/styles'
+import ImageSlider from './slider'
 
 const SplitPaneSection = ({
   reverse,
-  image,
+  images,
   children,
   name,
   background,
@@ -79,7 +78,7 @@ const SplitPaneSection = ({
                 }
               `}
             >
-              <GatsbyImage fluid={image.childImageSharp.fluid} />
+              <ImageSlider images={images} />
             </div>
           </Column>
           <Column

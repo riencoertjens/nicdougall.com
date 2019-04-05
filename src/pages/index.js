@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => (
         >
           Partners
         </h2>
-        <p
+        <div
           css={css`
             color: white;
             display: flex;
@@ -147,7 +147,7 @@ const IndexPage = ({ data }) => (
           <GatsbyLink to="/partners#incrediwear">
             <GatsbyImage fluid={data.incrediwear.childImageSharp.fluid} />
           </GatsbyLink>
-        </p>
+        </div>
         <>
           <ButtonGatsbyLink
             border

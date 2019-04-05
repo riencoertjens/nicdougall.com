@@ -30,13 +30,13 @@ import {
 import { EventsList } from '../pages/calendar'
 import Obfuscate from 'react-obfuscate'
 
-const SocialLinks = ({ instagram, facebook, twitter, css }) => (
+const SocialLinks = ({ instagram, facebook, twitter, style }) => (
   <>
     {instagram && (
       <OutboundLink
         aria-label="instagram"
         href={`https://instagram.com/${instagram}`}
-        {...css}
+        css={style}
       >
         <InstagramIcon />
       </OutboundLink>
@@ -45,6 +45,7 @@ const SocialLinks = ({ instagram, facebook, twitter, css }) => (
       <OutboundLink
         aria-label="twitter"
         href={`https://twitter.com/${twitter}`}
+        css={style}
       >
         <TwitterIcon />
       </OutboundLink>
@@ -53,6 +54,7 @@ const SocialLinks = ({ instagram, facebook, twitter, css }) => (
       <OutboundLink
         aria-label="facebook"
         href={`https://facebook.com/${facebook}`}
+        css={style}
       >
         <FacebookIcon />
       </OutboundLink>
@@ -208,12 +210,12 @@ class Layout extends Component {
                 >
                   blog
                 </GatsbyLink>
-                <GatsbyLink
+                {/* <GatsbyLink
                   onClick={() => this.setState({ menuActive: false })}
                   to="/calendar"
                 >
                   calendar
-                </GatsbyLink>
+                </GatsbyLink> */}
               </nav>
               <div
                 css={css`
@@ -280,17 +282,24 @@ class Layout extends Component {
                     `}
                   >
                     <h2>Stay in the loop</h2>
-                    <p
+                    <h3
                       css={css`
-                        a {
-                          font-size: 1.5rem;
-                          margin-right: 1rem;
+                        span {
+                          display: block;
                         }
                       `}
                     >
-                      <h3>follow me</h3>
-                      <SocialLinks {...data.site.siteMetadata} />
-                    </p>
+                      follow me
+                    </h3>
+                    <SocialLinks
+                      style={css`
+                        font-size: 1.5rem;
+                        margin-right: 1rem;
+                        margin-bottom: 1rem;
+                        display: inline-block;
+                      `}
+                      {...data.site.siteMetadata}
+                    />
                     <h3>get in touch</h3>
                     <p
                       css={css`

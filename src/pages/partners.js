@@ -65,7 +65,7 @@ const PartnersPage = ({ data }) => (
       </div>
     </Hero>
     <SplitPaneSection
-      image={data.ventumImage}
+      images={data.ventumImages}
       name="ventum"
       background={colors.blue}
       reverse
@@ -93,7 +93,7 @@ const PartnersPage = ({ data }) => (
       </p>
     </SplitPaneSection>
     <SplitPaneSection
-      image={data.incrediwearImage}
+      images={data.hokaoneoneImages}
       name="hokaoneone"
       background={colors.yellow}
     >
@@ -123,7 +123,7 @@ const PartnersPage = ({ data }) => (
       </p>
     </SplitPaneSection>
     <SplitPaneSection
-      image={data.hokaoneoneImage}
+      images={data.incrediwearImages}
       name="incrediwear"
       background={colors.blue}
       reverse
@@ -149,6 +149,7 @@ const PartnersPage = ({ data }) => (
     </SplitPaneSection>
     <SplitPaneSection
       image={data.wantedImage}
+      images={data.wantedImages}
       name="wanted"
       background={colors.yellow}
     >
@@ -202,7 +203,10 @@ export const PartnersPageQuery = graphql`
         phone
       }
     }
-    headerImage: file(base: { eq: "nic-tadaa.jpg" }) {
+    headerImage: file(
+      base: { eq: "hero.jpg" }
+      sourceInstanceName: { eq: "partners-images" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid
@@ -210,52 +214,51 @@ export const PartnersPageQuery = graphql`
       }
       ...SEOImageFragment
     }
-    ventumLogo: file(base: { eq: "sponsor-ventum.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    ventumImages: allFile(
+      filter: {
+        sourceInstanceName: { eq: "partners-images" }
+        relativeDirectory: { eq: "ventum" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageSliderFragment
         }
       }
     }
-    ventumImage: file(base: { eq: "bike.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    hokaoneoneImages: allFile(
+      filter: {
+        sourceInstanceName: { eq: "partners-images" }
+        relativeDirectory: { eq: "hoka" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageSliderFragment
         }
       }
     }
-    hokaoneoneLogo: file(base: { eq: "sponsor-hokaoneone.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    incrediwearImages: allFile(
+      filter: {
+        sourceInstanceName: { eq: "partners-images" }
+        relativeDirectory: { eq: "incrediwear" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageSliderFragment
         }
       }
     }
-    hokaoneoneImage: file(base: { eq: "shoes.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+    wantedImages: allFile(
+      filter: {
+        sourceInstanceName: { eq: "partners-images" }
+        relativeDirectory: { eq: "wanted" }
       }
-    }
-    incrediwearLogo: file(base: { eq: "sponsor-incrediwear.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    incrediwearImage: file(base: { eq: "shoes.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    wantedImage: file(base: { eq: "nic-and-bike.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    ) {
+      edges {
+        node {
+          ...ImageSliderFragment
         }
       }
     }

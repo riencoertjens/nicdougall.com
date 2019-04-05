@@ -40,6 +40,10 @@ export const typographySettings = {
 }
 
 export const globalStyle = css`
+  *::selection {
+    background: ${colors.blue};
+    color: ${colors.yellow};
+  }
   blockquote {
     font-style: italic;
     span {

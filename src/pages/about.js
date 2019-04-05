@@ -45,7 +45,17 @@ const AboutPage = ({ data }) => (
       </div>
     </Hero>
     <Section background={colors.yellow}>
-      <Container>
+      <Container
+        css={css`
+          blockquote {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            span {
+              color: ${colors.blue};
+            }
+          }
+        `}
+      >
         <h2
           css={css`
             color: ${colors.blue};
@@ -115,6 +125,12 @@ const AboutPage = ({ data }) => (
           also have a Cavalier King Charles Spaniel named Dora who loves to lick
           all the salt off my legs when I come home from a ride or run and
           cuddle on the couch with us when its raining.
+          <blockquote>
+            Nic is amazing! <span>- Brooke</span>
+          </blockquote>
+          <blockquote>
+            I licks legs! <span>- Dora</span>
+          </blockquote>
         </p>
         <GatsbyImage
           fixed={data.family.childImageSharp.fixed}
@@ -182,47 +198,3 @@ export const AboutPageQuery = graphql`
     }
   }
 `
-
-// instagramUser: allPostsJson(limit: 1) {
-//   edges {
-//     node {
-//       userName
-//       userFullName
-//       userBio
-//       userFollowers
-//       userPostCount
-//       id
-//       code
-//       likes
-//       comment
-//       text
-//       type
-//       image {
-//         childImageSharp {
-//           fluid(maxWidth: 230, quality: 75) {
-//             originalName
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// instagramPosts: allPostsJson(limit: 13) {
-//   edges {
-//     node {
-//       id
-//       code
-//       likes
-//       comment
-//       type
-//       text
-//       image {
-//         childImageSharp {
-//           fluid(maxWidth: 80, quality: 75) {
-//             originalName
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

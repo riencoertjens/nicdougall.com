@@ -13,7 +13,7 @@ const PostPage = ({ data, pageContext: { slug } }) => {
   return (
     <Layout>
       <SEO
-        path={slug}
+        pathname={slug}
         title={post.frontmatter.title}
         description={post.excerpt}
         image={post.frontmatter.image.childImageSharp.SEO.src}

@@ -7,6 +7,7 @@ import {
   Section,
   Container,
   ScrollArrow,
+  OutboundLink,
 } from '../components/webhart-components'
 import GatsbyImage from 'gatsby-image'
 import css from '@emotion/css'
@@ -126,6 +127,7 @@ const IndexPage = ({ data }) => (
             justify-content: space-evenly;
             margin: 0 -1rem;
             flex-wrap: wrap;
+            & > div,
             a {
               margin: 1rem;
               flex: 0 0 300px;
@@ -138,7 +140,7 @@ const IndexPage = ({ data }) => (
             }
           `}
         >
-          <GatsbyLink to="/partners#ventum">
+          {/* <GatsbyLink to="/partners#ventum">
             <GatsbyImage fluid={data.ventum.childImageSharp.fluid} />
           </GatsbyLink>
           <GatsbyLink to="/partners#hokaoneone">
@@ -146,10 +148,32 @@ const IndexPage = ({ data }) => (
           </GatsbyLink>
           <GatsbyLink to="/partners#incrediwear">
             <GatsbyImage fluid={data.incrediwear.childImageSharp.fluid} />
-          </GatsbyLink>
+          </GatsbyLink> */}
+
+          {/* <OutboundLink href="http://google.com">
+            <GatsbyImage fluid={data.hokaoneone.childImageSharp.fluid} />
+          </OutboundLink> */}
+          <OutboundLink href="https://ventumracing.com">
+            <GatsbyImage fluid={data.ventum.childImageSharp.fluid} />
+          </OutboundLink>
+          <OutboundLink href="https://incrediwear.com">
+            <GatsbyImage fluid={data.incrediwear.childImageSharp.fluid} />
+          </OutboundLink>
+          <OutboundLink href="https://www.roka.com">
+            <GatsbyImage fluid={data.roka.childImageSharp.fluid} />
+          </OutboundLink>
+          <OutboundLink href="https://www.fizik.com">
+            <GatsbyImage fluid={data.fizik.childImageSharp.fluid} />
+          </OutboundLink>
+          <OutboundLink href="https://prepdhydration.com.au">
+            <GatsbyImage fluid={data.prepd.childImageSharp.fluid} />
+          </OutboundLink>
+          <OutboundLink href="https://www.santinisms.it/">
+            <GatsbyImage fluid={data.santini.childImageSharp.fluid} />
+          </OutboundLink>
         </div>
         <>
-          <ButtonGatsbyLink
+          {/* <ButtonGatsbyLink
             border
             alt
             to="/partners"
@@ -158,7 +182,7 @@ const IndexPage = ({ data }) => (
             `}
           >
             more info
-          </ButtonGatsbyLink>
+          </ButtonGatsbyLink> */}
         </>
       </Container>
     </Section>
@@ -216,6 +240,34 @@ export const IndexPageQuery = graphql`
       }
     }
     incrediwear: file(base: { eq: "sponsor-incrediwear.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    roka: file(base: { eq: "sponsor-roka.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    fizik: file(base: { eq: "sponsor-fizik.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    prepd: file(base: { eq: "sponsor-prepd.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    santini: file(base: { eq: "sponsor-santini.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_tracedSVG

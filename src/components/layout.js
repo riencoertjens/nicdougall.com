@@ -198,12 +198,12 @@ class Layout extends Component {
                 >
                   about
                 </GatsbyLink>
-                <GatsbyLink
+                {/* <GatsbyLink
                   onClick={() => this.setState({ menuActive: false })}
                   to="/partners"
                 >
                   partners
-                </GatsbyLink>
+                </GatsbyLink> */}
                 <GatsbyLink
                   onClick={() => this.setState({ menuActive: false })}
                   to="/blog"

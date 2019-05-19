@@ -2,7 +2,7 @@
 templateKey: post
 image: /netlify-uploads/nic5.jpg
 title: Nic Dougall announces return to triathlon
-date: 2019-01-31T00:00:00.000Z
+date: 2018-12-31T00:00:00.000Z
 draft: false
 featured: true
 pages:

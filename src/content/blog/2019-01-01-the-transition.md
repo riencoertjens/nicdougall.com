@@ -2,7 +2,7 @@
 templateKey: post
 image: /netlify-uploads/2019-01-01-the-transition.jpg
 title: The transition
-date: 2008-07-20T00:00:00.000Z
+date: 2019-01-01T00:00:00.000Z
 draft: false
 featured: true
 pages:

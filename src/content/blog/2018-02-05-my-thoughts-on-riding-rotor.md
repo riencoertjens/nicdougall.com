@@ -2,7 +2,7 @@
 templateKey: post
 image: /netlify-uploads/maxresdefault.jpg
 title: My thoughts on riding Rotor
-date: 2008-07-20T00:00:00.000Z
+date: 2018-02-05T00:00:00.000Z
 draft: false
 featured: true
 pages:

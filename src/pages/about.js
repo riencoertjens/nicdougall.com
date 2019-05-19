@@ -75,9 +75,9 @@ const AboutPage = ({ data }) => (
           captured by Triathlon in high school. During that time I made 3 state
           teams and won the 16-19 Age Group Sprint Distance World Championships
           in 2009.
-          <blockquote>
+          {/* <blockquote>
             Nic is amazing! <span>- national coach at the time?</span>
-          </blockquote>
+          </blockquote> */}
         </p>
 
         <p>
@@ -93,9 +93,9 @@ const AboutPage = ({ data }) => (
           to ride some of the biggest races in the world with this team
           including 2 Vuelta Espanas and the big Spring Classics like De Ronde
           van Vlaanderen. I also placed Top 20 at Road Worlds in 2016.
-          <blockquote>
+          {/* <blockquote>
             Nic is amazing! <span>- Mark Cavendish?</span>
-          </blockquote>
+          </blockquote> */}
         </p>
 
         <p>
@@ -108,9 +108,9 @@ const AboutPage = ({ data }) => (
           three sports can provide. I'll always be thankful for my time in the
           peloton but at the same time I'm extremely excited to be chasing my
           own personal success as a triathlete.
-          <blockquote>
+          {/* <blockquote>
             Nic is amazing! <span>- some big shot in triathlon?</span>
-          </blockquote>
+          </blockquote> */}
         </p>
 
         <p>
@@ -125,9 +125,9 @@ const AboutPage = ({ data }) => (
           also have a Cavalier King Charles Spaniel named Dora who loves to lick
           all the salt off my legs when I come home from a ride or run and
           cuddle on the couch with us when its raining.
-          <blockquote>
+          {/* <blockquote>
             Nic is amazing! <span>- Brooke</span>
-          </blockquote>
+          </blockquote> */}
           <blockquote>
             I licks legs! <span>- Dora</span>
           </blockquote>

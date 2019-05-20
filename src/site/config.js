@@ -9,8 +9,8 @@ const base = {
   phone: `+1(650) 454-6751`,
   facebookAppID: ``,
   facebookPage: `155775668303609`,
-  url: `https://nicdougall.netlify.com`, // no trailing slash!
-  // url: `https://www.nicdougall.com`,
+  // url: `https://nicdougall.netlify.com`, // no trailing slash!
+  url: `https://www.nicdougall.com`,
   titleTemplateSeperator: ` | `,
   icon: `src/images/site-icon.png`, // 1500x1500 This path is relative to the root of the site.
   image: `/images/social-image.png`, // 1200x630 This path is relative to the root of the site.

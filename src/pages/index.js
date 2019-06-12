@@ -14,7 +14,6 @@ import css from '@emotion/css'
 import LogoSVG from '../images/logo.svg'
 import { colors, ButtonGatsbyLink } from '../site/styles'
 import PostList from '../components/PostList'
-import GatsbyLink from 'gatsby-link'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -200,7 +199,10 @@ export const IndexPageQuery = graphql`
         siteDescription
       }
     }
-    headerImage: file(base: { eq: "nic-on-bike.jpg" }) {
+    headerImage: file(
+      base: { eq: "hero.jpg" }
+      sourceInstanceName: { eq: "home-images" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid

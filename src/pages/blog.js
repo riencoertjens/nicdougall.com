@@ -89,7 +89,10 @@ export const BlogPageQuery = graphql`
         }
       }
     }
-    headerImage: file(base: { eq: "nic-beach.jpg" }) {
+    headerImage: file(
+      base: { eq: "hero.jpg" }
+      sourceInstanceName: { eq: "blog-images" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid

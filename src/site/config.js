@@ -13,7 +13,7 @@ const base = {
   url: `https://www.nicdougall.com`,
   titleTemplateSeperator: ` | `,
   icon: `src/images/site-icon.png`, // 1500x1500 This path is relative to the root of the site.
-  image: `/images/social-image.png`, // 1200x630 This path is relative to the root of the site.
+  image: `/images/social-image.jpg`, // 1200x630 This path is relative to the root of the site.
   language: `en`,
   description: `Completing the 10 year challenge in style! U19 olympic distance world champion of 2009, plant powered triathlete, Nic Dougall returns to his triathlon roots after working on his cycling leg in world's highest level bike racing league`,
   primaryColor: `#F0AB25`,
